@@ -9,25 +9,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CYBER CIV — Persistent Evolving Cyber Civilization | Paris Pehlivanovic</title>
-<meta name="description" content="CYBER CIV is a persistent multi-agent simulation: four AI civilizations — Ares, Pax, Vex — plus Archon, a sovereign regulator that sanctions, vetoes, and can be voted out of power. Watch them live.">
+<meta name="description" content="CYBER CIV is a persistent multi-agent simulation: five AI civilizations — Ares, Pax, Vex, Archon, and Aegis, a custodian that recovers stolen funds — plus Archon, a sovereign regulator that sanctions, vetoes, and can be voted out of power. Watch them live.">
 <meta name="keywords" content="AI simulation, multi-agent system, artificial civilizations, agent-based modeling, python simulation, AI governance">
 <meta name="author" content="Paris Pehlivanovic">
 <!-- TODO: replace https://pehlivanovicparis-cloud.github.io/cyber-civ with your GitHub Pages URL, e.g. https://username.github.io/cyber-civ -->
 <link rel="canonical" href="https://pehlivanovicparis-cloud.github.io/cyber-civ/">
 <meta property="og:title" content="CYBER CIV — Persistent Evolving Cyber Civilization">
-<meta property="og:description" content="Four AI civilizations. One government. It sanctions winners, vetoes matches — and gets voted out of power. Watch it live.">
+<meta property="og:description" content="Five AI civilizations. One government. One custodian that recovers what theft takes. It sanctions winners, vetoes matches — and gets voted out of power. Watch it live.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://pehlivanovicparis-cloud.github.io/cyber-civ/">
 <meta property="og:image" content="https://pehlivanovicparis-cloud.github.io/cyber-civ/terminal-capture.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CYBER CIV — Persistent Evolving Cyber Civilization">
-<meta name="twitter:description" content="Four AI civilizations. One government. Sanctions, vetoes, elections. Watch it live.">
+<meta name="twitter:description" content="Five AI civilizations. One government. One custodian that recovers stolen funds. Sanctions, vetoes, elections. Watch it live.">
 <meta name="twitter:image" content="https://pehlivanovicparis-cloud.github.io/cyber-civ/terminal-capture.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication",
  "name":"CYBER CIV","applicationCategory":"Simulation",
  "operatingSystem":"Any","author":{"@type":"Person","name":"Paris Pehlivanovic"},
- "description":"Persistent multi-agent simulation of four AI civilizations, one a sovereign regulator with sanction, veto, and election mechanics.",
+ "description":"Persistent multi-agent simulation of five AI civilizations, one a sovereign regulator with sanction, veto, and election mechanics, and one a custodian that recovers stolen funds from a shared pool.",
  "offers":{"@type":"Offer","price":"0"},"license":"https://https://pehlivanovicparis-cloud.github.io/cyber-civ/#license"}
 </script>
 <style>
@@ -92,6 +92,7 @@
   <div class="logo">CYBER <span>CIV</span></div>
   <a href="#civs">Civilizations</a>
   <a href="#how">How it works</a>
+  <a href="#recovery">Recovery</a>
   <a href="assistant.html">Assistant</a>
   <a href="pricing.html">Pricing</a>
   <a href="#license">License</a>
@@ -102,7 +103,7 @@
   <div class="hero">
     <div class="kicker">A PERSISTENT MULTI-AGENT SIMULATION</div>
     <h1>CYBER <span>CIV</span></h1>
-    <p class="sub">Four AI civilizations with distinct personalities perceive world events, learn, ally, and compete. One of them is a government — it sanctions winners, vetoes matches, and can be voted out of power.</p>
+    <p class="sub">Five AI civilizations with distinct personalities perceive world events, learn, ally, and compete. One of them is a government — it sanctions winners, vetoes matches, and can be voted out of power. One of them is a custodian — it restores stolen funds to their victims.</p>
     <div class="btns">
       <a class="btn gold" href="demo.html">▶ Watch it live</a>
       <a class="btn ghost" href="demo.html#code">⟨/⟩ View the code</a>
@@ -117,7 +118,8 @@
       <div class="card" style="--ac:#ff5d5d"><h3>Ares</h3><p>The pessimist. Sees risk everywhere, adapts fast, strikes hard.</p><span class="tag">bias +0.10 · lr 0.07</span></div>
       <div class="card" style="--ac:#5aa9ff"><h3>Pax</h3><p>The optimist. Underestimates risk, adapts slowly, endures.</p><span class="tag">bias −0.10 · lr 0.04</span></div>
       <div class="card" style="--ac:#9aa4b8"><h3>Vex</h3><p>The pragmatist. Reads the world straight, adapts in the middle.</p><span class="tag">bias 0.00 · lr 0.06</span></div>
-      <div class="card" style="--ac:#ffd166"><h3>Archon</h3><p>The sovereign regulator. Governs the other three — at a cost.</p><span class="tag">bias +0.05 · lr 0.05</span></div>
+      <div class="card" style="--ac:#ffd166"><h3>Archon</h3><p>The sovereign regulator. Governs the other four — at a cost.</p><span class="tag">bias +0.05 · lr 0.05</span></div>
+      <div class="card" style="--ac:#3ddc97"><h3>Aegis</h3><p>The custodian. Restores stolen funds to victims from the shared recovery pool — and never takes a share.</p><span class="tag">bias −0.05 · lr 0.05</span></div>
     </div>
   </section>
 
@@ -126,7 +128,7 @@
     <p class="lede">Every generation runs the same seven-step cycle. Nothing is scripted — outcomes emerge.</p>
     <ol class="steps">
       <li><b>01</b> <strong>Event.</strong> A risk scenario is drawn from the crypto, banking, network, or governance worlds.</li>
-      <li><b>02</b> <strong>Perception.</strong> Each civ perceives the risk through its own bias plus noise. Archon reads governance events clearly; the rest guess.</li>
+      <li><b>02</b> <strong>Perception.</strong> Each civ perceives the risk through its own bias plus noise. Archon reads governance events clearly; Aegis reads crypto and banking threats clearly; the rest guess.</li>
       <li><b>03</b> <strong>Decision.</strong> Intent updates from perceived risk — EXPAND, STABILIZE, or EXPLORE.</li>
       <li><b>04</b> <strong>Governance.</strong> Archon may issue a directive, each costing it intent. Pending mandates override decisions.</li>
       <li><b>05</b> <strong>Alliances.</strong> Civs with near-identical intent ally and refuse to fight each other.</li>
@@ -144,6 +146,18 @@
       <tr><td><strong>Sanction</strong></td><td>Halves a runaway winner's odds for 2 generations</td><td class="mono">0.02 intent</td></tr>
       <tr><td><strong>Veto</strong></td><td>Overturns a runaway leader's match win</td><td class="mono">10-gen cooldown</td></tr>
       <tr><td><strong>Election</strong></td><td>Every 25 generations the civs vote — majority ousts Archon for 10 generations</td><td class="mono">automatic</td></tr>
+    </table>
+  </section>
+
+  <section id="recovery">
+    <h2>The <span>recovery</span></h2>
+    <p class="lede">Theft is real in this world — and so is getting made whole. Aegis, the custodian, runs the recovery system. The money comes from everyone; the victims get it back.</p>
+    <table>
+      <tr><th>Piece</th><th>How it works</th><th>Number</th></tr>
+      <tr><td><strong>Loss ledger</strong></td><td>A theft or breach event steals treasury from the richest civ. The frozen share is recorded as recoverable; the rest is gone for good.</td><td class="mono">40–60% frozen</td></tr>
+      <tr><td><strong>Recovery pool</strong></td><td>Every civ pays a small levy into the shared pool each generation. Insurance: everyone pays in, victims get reimbursed.</td><td class="mono">0.005 / gen · cap 0.5</td></tr>
+      <tr><td><strong>RECOVER</strong></td><td>Aegis restores a victim's frozen share from the pool. Aegis only — it never takes funds for itself.</td><td class="mono">max 0.10 · 4-gen cooldown</td></tr>
+      <tr><td><strong>Fallback</strong></td><td>If Aegis can't act, the engine itself reimburses the oldest open loss — so no victim is ever stranded.</td><td class="mono">max 0.05 / gen</td></tr>
     </table>
   </section>
 
